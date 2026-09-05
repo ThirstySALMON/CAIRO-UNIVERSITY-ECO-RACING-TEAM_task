@@ -208,9 +208,9 @@ void setup() {
     ledcAttach(2, 5000, 10);  // 5 kHz, 10-bit
 
     xTaskCreatePinnedToCore(commandRxTask, "RX", 4096, NULL, 4, NULL, 1);
-    xTaskCreatePinnedToCore(actuateTask, "ACTUATE", 4096, NULL, 4, NULL, 1);
-    xTaskCreatePinnedToCore(watchdogTask, "WATCHDOG", 4096, NULL, 4, NULL, 1);
-    xTaskCreatePinnedToCore(statusTask, "STATUS", 4096, NULL, 4, NULL, 1);
+    xTaskCreatePinnedToCore(actuateTask, "ACTUATE", 4096, NULL, 3, NULL, 1);
+    xTaskCreatePinnedToCore(watchdogTask, "WATCHDOG", 4096, NULL, 3, NULL, 1);
+    xTaskCreatePinnedToCore(statusTask, "STATUS", 4096, NULL, 1, NULL, 1);
 
 
 
